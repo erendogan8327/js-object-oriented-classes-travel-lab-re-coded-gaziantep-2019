@@ -3,9 +3,8 @@ class Driver{
     this.name=name;
     this.startDate=new Date(startDate);
   }
-  
  
-  yearsExperienceFromBeginningOf(day2){
+yearsExperienceFromBeginningOf(day2){
     let date1 = new Date(this.startDate);
     let date2 = new Date(day2);
     return date2.getFullYear()-date1.getFullYear();
@@ -18,7 +17,7 @@ class Route{
   }
   
 
-  blocksTravelled(){
+blocksTravelled(){
 let eastWest = [
   '1st Avenue',
   '2nd Avenue',
@@ -28,15 +27,14 @@ let eastWest = [
   'Madison Avenue',
   '5th Avenue'
 ];
-      let fark= Math.abs(eastWest.indexOf(this.beginningLocation.horizontal)-eastWest.indexOf(this.endingLocation.horizontal))+Math.abs(this.beginningLocation.vertical-this.endingLocation.vertical)
-      return fark;
+  let diff = Math.abs(eastWest.indexOf(this.beginningLocation.horizontal)-eastWest.indexOf(this.endingLocation.horizontal))+Math.abs(this.beginningLocation.vertical-this.endingLocation.vertical);
+      return diff;
   }
   estimatedTime(peak){
-  let zaman1= this.blocksTravelled()/3;
-  let zaman2= this.blocksTravelled()/2;
-     if(peak)return zaman2 ;
-     else return zaman1;
+  let time1= this.blocksTravelled()/3;
+  let time2= this.blocksTravelled()/2;
+     if(peak)return time2 ;
+     else return time1;
    
 }
-
 }
